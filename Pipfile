@@ -9,6 +9,8 @@ verify_ssl = true
 flask = "*"
 python3 = "*"
 flask-sqlalchemy = "*"
+tweepy = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.5"
