@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content%}
 
-<h2>User: {{ title }}</h2>
+<h2 bgcolor="#000000" class="greentext">User: {{ title }}</h2>
 
-<p>{{ message }}</p>
+<p class="greentext">{{ message }}</p>
 
-<ul>
+<ul class="greentext">
    {% for tweet in tweets %}
    <li>{{ tweet.id }} - {{ tweet.text }}</li>
    {% endfor %}

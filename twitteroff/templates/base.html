@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+        .blacktext {
+            color:black;
+        }
+        .greentext {
+            color:lime
+        }
+        </style>
         <title>TwitterOff - {{ title }}</title>
         <!-- CSS, keywords, metadata goes here -->
     </head>
 
-    <body>
-        <h1>TwitterOff!</h1>
+    <body bgcolor="#000000" class="greentext">
+        <h1 class="greentext">TwitterOff!</h1>
         {% block content %}
-        <form action="/user" method="post">
-            <input type="text" name="user_name" placeholder="User to add">
-            <input type="submit" value="Add User">
+        <form class="blacktext" action="/user" method="post">
+            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
+            size="10" maxlength="30"name="user_name" placeholder="User to add">
+            <input type="submit"  STYLE="color: #000000; font-family: Verdana;
+             font-weight: bold; font-size: 12px; background-color: #00FF00;" value="Add User">
         </form>
 
-        <form action="/compare" method="post">
-            <select name="user1">
+        <form  bgcolor="#000000" class="greentext" action="/compare" method="post">
+            <select name="user1" STYLE="color: #000000; background-color: #00FF00">
                 {% for user in users %}
-                <option value="{{ user.name }}">{{ user.name }}</option>
+                <option bgcolor="#000000" class="greentext" value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <select name="user2">
+            <select name="user2" STYLE="color: #000000; background-color: #00FF00">
                 {% for user in users %}
-                <option value="{{ user.name }}">{{ user.name }}</option>
+                <option  bgcolor="#000000" class="greentext" value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <input type="text" name="tweet_text" placeholder="Tweet text to predict">
-            <input type="submit" value="Compare Users">
+            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
+            size="10" maxlength="30" name="tweet_text" placeholder="Tweet text to predict">
+            <input type="submit" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
+            size="10" maxlength="30" value="Compare Users">
         </form>
         {% endblock %}
     </body>
