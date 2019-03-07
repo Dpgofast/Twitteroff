@@ -11,10 +11,12 @@
         </style>
         <title>TwitterOff - {{ title }}</title>
         <!-- CSS, keywords, metadata goes here -->
-        <LINK href="style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body bgcolor="#000000" class="greentext">
+        <canvas id="canvas"></canvas>
+        <script src="script.js"></script>
         <h1 class="greentext">TwitterOff!</h1>
         {% block content %}
         <form class="blacktext" action="/user" method="post">
