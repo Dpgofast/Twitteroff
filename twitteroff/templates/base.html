@@ -5,8 +5,8 @@
         .blacktext {
             color:black;
         }
-        .greentext {
-            color:lime
+        .orangetext {
+            color:orange
         }
         </style>
         <title>TwitterOff - {{ title }}</title>
@@ -14,36 +14,36 @@
     </head>
 
     <body style="background-image:url(https://cdn.allwallpaper.in/wallpapers/2732x1536/647/text-fake-matrix-2732x1536-wallpaper.jpg)">
-        <h1 class="greentext">TwitterOff!</h1>
-            <p class="greentext">Add Twitter users and a fictitious tweet to see which user is more likely to tweet it!</p>
+        <h1 class="orangetext">TwitterOff!</h1>
+            <p class="orangetext">Add Twitter users and a fictitious tweet to see which user is more likely to tweet it!</p>
         {% block content %}
-        <form bgcolor="#5A5E5C" class="blacktext" action="/user" method="post">
+        <form bgcolor="#ffa500" class="blacktext" action="/user" method="post">
 
             <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px;
-             background-color: #00FF00;" 
+             background-color: #ffa500;" 
             name="user_name" placeholder="User to add">
 
             <input type="submit"  STYLE="color: #000000; font-family: Verdana;
-             font-weight: bold; font-size: 12px; background-color: #00FF00;" value="Add User">
+             font-weight: bold; font-size: 12px; background-color: #ffa500;" value="Add User">
 
         </form>
 
-        <form bgcolor="#5A5E5C" action="/compare" method="post">
+        <form bgcolor="#ffa500" action="/compare" method="post">
             <select name="user1" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px;
-             background-color: #00FF00; 
+             background-color: #ffa500; 
             size=100; maxlength=3000">
                 {% for user in users %}
                 <option bgcolor="#5A5E5C" class="blacktext" value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <select name="user2" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;">
+            <select name="user2" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #ffa500;">
                 {% for user in users %}
                 <option bgcolor="5A5E5C" class="blacktext"value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <input type="text" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00; 
+            <input type="text" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #ffa500; 
             size=100; maxlength=3000" name="tweet_text" placeholder="Tweet text to predict">
-            <input type="submit" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;"
+            <input type="submit" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #ffa500;"
              value="Compare Users">
         </form>
         {% endblock %}
