@@ -10,15 +10,17 @@
         }
         </style>
         <title>TwitterOff - {{ title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
         <!-- CSS, keywords, metadata goes here -->
     </head>
 
-    <body bgcolor="#000000" class="greentext">
+    <body>
         <h1 class="greentext">TwitterOff!</h1>
         {% block content %}
         <form class="blacktext" action="/user" method="post">
-            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
-            size="10" maxlength="30"name="user_name" placeholder="User to add">
+            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold;
+             font-size: 12px; background-color: #00FF00;" 
+                size="10" maxlength="30"name="user_name" placeholder="User to add">
             <input type="submit"  STYLE="color: #000000; font-family: Verdana;
              font-weight: bold; font-size: 12px; background-color: #00FF00;" value="Add User">
         </form>
@@ -34,11 +36,14 @@
                 <option  bgcolor="#000000" class="greentext" value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
+            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold;
+                font-size: 12px; background-color: #00FF00;" 
             size="10" maxlength="30" name="tweet_text" placeholder="Tweet text to predict">
-            <input type="submit" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
+            <input type="submit" STYLE="color: #000000; font-family: Verdana; 
+                font-weight: bold; font-size: 12px; background-color: #00FF00;" 
             size="10" maxlength="30" value="Compare Users">
         </form>
         {% endblock %}
     </body>
+
 </html>
