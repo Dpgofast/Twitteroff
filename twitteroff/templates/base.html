@@ -11,17 +11,15 @@
         </style>
         <title>TwitterOff - {{ title }}</title>
         <!-- CSS, keywords, metadata goes here -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/picnic">
     </head>
 
-    <body bgcolor="#000000" class="greentext">
-        <canvas id="canvas"></canvas>
-        <script src="script.js"></script>
+    <body bgcolor="#5A5E5C" class="greentext">
         <h1 class="greentext">TwitterOff!</h1>
         {% block content %}
         <form class="blacktext" action="/user" method="post">
             <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
-            size="10" maxlength="30"name="user_name" placeholder="User to add">
+            name="user_name" placeholder="User to add">
             <input type="submit"  STYLE="color: #000000; font-family: Verdana;
              font-weight: bold; font-size: 12px; background-color: #00FF00;" value="Add User">
         </form>
@@ -30,19 +28,18 @@
             <select name="user1" STYLE="color: #00FF00; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
             size="10" maxlength="30">
                 {% for user in users %}
-                <option bgcolor="#000000" class="greentext" value="{{ user.name }}">{{ user.name }}</option>
+                <option bgcolor="#5A5E5C" class="greentext" value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <select name="user2" STYLE="color: #00FF00; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
-            size="10" maxlength="30">
+            <select name="user2" STYLE="color: #00FF00; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;">
                 {% for user in users %}
                 <option value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
             <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
             size="10" maxlength="30" name="tweet_text" placeholder="Tweet text to predict">
-            <input type="submit" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
-            size="10" maxlength="30" value="Compare Users">
+            <input type="submit" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;"
+             value="Compare Users">
         </form>
         {% endblock %}
     </body>
