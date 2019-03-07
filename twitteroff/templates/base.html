@@ -15,28 +15,31 @@
 
     <body bgcolor="#5A5E5C">
         <h1 class="greentext">TwitterOff!</h1>
+            <p>Add Twitter users and a fictitious tweet to see which user is more likely to tweet it!</p>
         {% block content %}
-        <form class="blacktext" action="/user" method="post">
-            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
+        <form bgcolor="#5A5E5C" class="blacktext" action="/user" method="post">
+            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px;
+             background-color: #00FF00;" 
             name="user_name" placeholder="User to add">
             <input type="submit"  STYLE="color: #000000; font-family: Verdana;
              font-weight: bold; font-size: 12px; background-color: #00FF00;" value="Add User">
         </form>
 
-        <form action="/compare" method="post">
-            <select name="user1" STYLE="color: #00FF00; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
-            size="10" maxlength="30">
+        <form bgcolor="#5A5E5C" action="/compare" method="post">
+            <select name="user1" STYLE="color: #00FF00; font-family: Verdana; font-weight: bold; font-size: 12px;
+             background-color: #00FF00; 
+            size=100; maxlength=3000">
                 {% for user in users %}
-                <option bgcolor="#5A5E5C" class="greentext" value="{{ user.name }}">{{ user.name }}</option>
+                <option bgcolor="#5A5E5C" class="blacktext" value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
             <select name="user2" STYLE="color: #00FF00; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;">
                 {% for user in users %}
-                <option value="{{ user.name }}">{{ user.name }}</option>
+                <option bgcolor="5A5E5C" class="blacktext"value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;" 
-            size="10" maxlength="30" name="tweet_text" placeholder="Tweet text to predict">
+            <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00; 
+            size=10; maxlength=30" name="tweet_text" placeholder="Tweet text to predict">
             <input type="submit" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00FF00;"
              value="Compare Users">
         </form>
