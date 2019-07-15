@@ -44,7 +44,6 @@ def create_app():
                                       request.values['tweet_text'])
             return user1 if prediction else user2
 
-
     @app.route('/reset')
     def reset():
         DB.drop_all()
