@@ -7,6 +7,3 @@ python-dotenv
 scikit-learn 
 gunicorn 
 psycopg2
-
-qlksdlkasdlklaef
-laslmasfasf
