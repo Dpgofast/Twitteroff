@@ -15,8 +15,7 @@ gunicorn = "*"
 psycopg2 = "*"
 Flask = "*"
 Flask-SQLAlchemy = "*"
-runpy = "*"
-json = "*"
+
 
 [requires]
-python_version = "3.5"
+python_version = "3.7"
