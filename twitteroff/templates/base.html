@@ -7,38 +7,38 @@
         <!-- CSS, keywords, metadata goes here -->
     </head>
 
-    <body style="background-image:url(https://github.com/Dpgofast/Twitteroff/blob/master/img/birdsonwire.jpg)">
+    <body style="background-image:url(https://github.com/Dpgofast/Twitteroff/blob/master/img/birdsonwire.jpg?raw=true)">
         <h1>TwitterOff!</h1>
-            <p> Are you tired of adding users to your Twitter feed only to find out you aren't really interested in what they Tweet about? With Twitteroff you can fiter through users probable tweets without going through the trouble of following them only to unfollow them shortly after. Simply add 2 twitter usernames and input a sample tweet you would like to see in your feed. Our model will run all the previous tweets from each user and tell you who is more likely to tweet about the things that interests you! 
+            <p> Are you tired of adding users to your Twitter feed only to find out you aren't really interested in what they Tweet about? With Twitteroff you can filter through users probable tweets without going through the trouble of following them only to unfollow them shortly after. Simply add 2 twitter usernames and input a sample tweet you would like to see in your feed. Our model will run all the previous tweets from each user and tell you who is more likely to tweet about the things that interests you! 
             </p>
         {% block content %}
-        <form bgcolor="#ffa500" class="blacktext" action="/user" method="post">
+        <form bgcolor="#00ff00" class="blacktext" action="/user" method="post">
 
             <input type="text" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px;
-             background-color: #ffa500;" 
+             background-color: #fffff0;" 
             name="user_name" placeholder="User to add">
 
             <input type="submit"  STYLE="color: #000000; font-family: Verdana;
-             font-weight: bold; font-size: 12px; background-color: #ffa500;" value="Add User">
+             font-weight: bold; font-size: 12px; background-color: #00ff00;" value="Add User">
 
         </form>
 
-        <form bgcolor="#ffa500" action="/compare" method="post">
+        <form bgcolor="#00ff00" action="/compare" method="post">
             <select name="user1" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px;
-             background-color: #ffa500; 
+             background-color: #00ff00; 
             size=100; maxlength=3000">
                 {% for user in users %}
                 <option bgcolor="#5A5E5C" class="blacktext" value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <select name="user2" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #ffa500;">
+            <select name="user2" STYLE="color: #000000; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00ff00;">
                 {% for user in users %}
                 <option bgcolor="5A5E5C" class="blacktext"value="{{ user.name }}">{{ user.name }}</option>
                 {% endfor %}
             </select>
-            <input type="text" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #ffa500; 
+            <input type="text" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00ff00; 
             size=100; maxlength=3000" name="tweet_text" placeholder="Tweet text to predict">
-            <input type="submit" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #ffa500;"
+            <input type="submit" STYLE="color: #5A5E5C; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #00ff00;"
              value="Compare Users">
         </form>
         {% endblock %}
