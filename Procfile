@@ -1,1 +1,1 @@
-web: gunicorn twitteroff:APP -t 120
+web: gunicorn twitteroff:APP -t 360
